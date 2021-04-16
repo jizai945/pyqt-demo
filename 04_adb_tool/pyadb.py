@@ -188,7 +188,7 @@ class Pyqt5_adb(QtWidgets.QWidget, Ui_Form):
         result = adb_shell(r'.\adb shell mkdir -p '+self.file_path_label.text())
         print(result[0])
         try:
-            result = adb_shell(r'.\adb push '+up_file+' '+self.file_path_label.text()+'/'+tempfilename)
+            result = adb_shell(r'.\adb push '+'\"'+up_file+'\"'+' '+self.file_path_label.text()+'/'+tempfilename)
             print(result[0])
         except:
             # 处理中文路径会崩溃的问题
